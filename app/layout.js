@@ -1,5 +1,8 @@
-import { Inter } from 'next/font/google'
 import './globals.css'
+import { Inter } from 'next/font/google'
+import Provider from './providers'
+import '@radix-ui/themes/styles.css';
+import { Theme } from '@radix-ui/themes';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,8 +13,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className='dark'>
+      <body className={inter.className}>
+      <Theme>
+        <Provider>
+        {children}
+        </Provider>
+      </Theme> 
+        </body>
     </html>
   )
 }
