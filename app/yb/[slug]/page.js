@@ -96,8 +96,8 @@ const menuItems = [
     const databases = new Databases(client);
 
     let promiseCheckAppwriteforgpt = databases.listDocuments(
-      "6569c7cd36b3636efb40",
-      "6569f4c334a19e18a7b8",
+      process.env.NEXT_PUBLIC_DB_ID,
+      process.env,NEXT_DB_ID_GPT_ID,
       [Query.equal("uid", `${params.slug}`)]
     );
 
@@ -109,8 +109,8 @@ const menuItems = [
           //  if the details are completely new,i.e. 0 documents in the databse for this slug id, then
           console.log("doing the process from beginning");
           let promise = databases.listDocuments(
-            "6569c7cd36b3636efb40",
-            "6569c7e5a79773498c06",
+            process.env.NEXT_DB_ID,
+            process.env.NEXT_PUBLIC_DETAILS_ID,
             [Query.equal("$id", `${params.slug}`)]
           );
 
@@ -170,8 +170,8 @@ const menuItems = [
                    const location = response.documents[0].location;
 
               const promisegpt = databases.createDocument(
-                "6569c7cd36b3636efb40",
-                "6569f4c334a19e18a7b8",
+                process.env.NEXT_DB_ID,
+                process.env.NEXT_PUBLIC_GPT_ID,
                 ID.unique(),
                 {
                   aboutUs: `${gptAboutUs.text}`,
