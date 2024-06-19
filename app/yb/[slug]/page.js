@@ -91,13 +91,13 @@ const menuItems = [
 
     const client = new Client()
       .setEndpoint("https://cloud.appwrite.io/v1")
-      .setProject("64ff77a619e2d6d3c6e3");
+      .setProject("e3");
 
     const databases = new Databases(client);
 
     let promiseCheckAppwriteforgpt = databases.listDocuments(
-      "6569c7cd36b3636efb40",
-      "6569f4c334a19e18a7b8",
+      "b40",
+      "7b8",
       [Query.equal("uid", `${params.slug}`)]
     );
 
@@ -109,8 +109,8 @@ const menuItems = [
           //  if the details are completely new,i.e. 0 documents in the databse for this slug id, then
           console.log("doing the process from beginning");
           let promise = databases.listDocuments(
-            "6569c7cd36b3636efb40",
-            "6569c7e5a79773498c06",
+            "b40",
+            "c06",
             [Query.equal("$id", `${params.slug}`)]
           );
 
@@ -170,8 +170,8 @@ const menuItems = [
                    const location = response.documents[0].location;
 
               const promisegpt = databases.createDocument(
-                "6569c7cd36b3636efb40",
-                "6569f4c334a19e18a7b8",
+                "b40",
+                "b8",
                 ID.unique(),
                 {
                   aboutUs: `${gptAboutUs.text}`,
