@@ -1,7 +1,7 @@
-"use client"
+
 import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image,Input, Button} from "@nextui-org/react";
-import React, {useState, useEffect} from 'react'
-import { Client, Account } from "appwrite";
+import React from 'react'
+import { ButtonLogin } from "../../components/Button"
 
 
 
@@ -38,16 +38,7 @@ const Login = () => {
         />
         <div className="flex flex-col gap-4 items-center">
           <p className="text-2xl">Welcome Back!</p>
-          <Button color="primary" variant="bordered" className='w-full' >
-          <Image
-          alt="Google logo"
-          height={20}
-          radius="lg"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"
-          width={20}
-        />
-            Sign in with Google
-          </Button>  
+          <ButtonLogin />
         </div>
       </CardHeader>
 
