@@ -12,7 +12,7 @@ const Login = () => {
 
     const client = new Client()
     .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
-    .setProject('e3');
+    .setProject(process.env.NEXT_PUBLIC_PROJECT_ID);
     const account = new Account(client);
     account.createOAuth2Session('google', 'http://localhost:3000/websitebuilder' , 'http://localhost:3000');
       }, []);

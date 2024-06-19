@@ -91,7 +91,7 @@ const menuItems = [
 
     const client = new Client()
       .setEndpoint("https://cloud.appwrite.io/v1")
-      .setProject("e3");
+      .setProject(process.env.NEXT_PUBLIC_PROJECT_ID);
 
     const databases = new Databases(client);
 
@@ -109,8 +109,8 @@ const menuItems = [
           //  if the details are completely new,i.e. 0 documents in the databse for this slug id, then
           console.log("doing the process from beginning");
           let promise = databases.listDocuments(
-            "b40",
-            "c06",
+            "6569c7cd36b3636efb40",
+            "6569c7e5a79773498c06",
             [Query.equal("$id", `${params.slug}`)]
           );
 

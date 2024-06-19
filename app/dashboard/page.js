@@ -13,7 +13,7 @@ const Dashboard = () => {
  function createUser() {
     const client = new Client()
     .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
-    .setProject('e3');
+    .setProject(PROJECT_ID);
     const account = new Account(client);
     async function fetchdata(account) {
         const session = await account.getSession('current');
