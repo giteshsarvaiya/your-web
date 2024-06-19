@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 
-const openai = new OpenAI({ apiKey: ''  ,dangerouslyAllowBrowser: true });
+const openai = new OpenAI({ apiKey: '1234'  ,dangerouslyAllowBrowser: true });
 
 export async function GPT(prompt) {
   console.log(prompt);

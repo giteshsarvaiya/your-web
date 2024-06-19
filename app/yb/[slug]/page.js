@@ -96,8 +96,8 @@ const menuItems = [
     const databases = new Databases(client);
 
     let promiseCheckAppwriteforgpt = databases.listDocuments(
-      "b40",
-      "7b8",
+      "6569c7cd36b3636efb40",
+      "6569f4c334a19e18a7b8",
       [Query.equal("uid", `${params.slug}`)]
     );
 
@@ -170,8 +170,8 @@ const menuItems = [
                    const location = response.documents[0].location;
 
               const promisegpt = databases.createDocument(
-                "b40",
-                "b8",
+                "6569c7cd36b3636efb40",
+                "6569f4c334a19e18a7b8",
                 ID.unique(),
                 {
                   aboutUs: `${gptAboutUs.text}`,
